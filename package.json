@@ -1,0 +1,28 @@
+{
+  "name": "socket-io-wrapper",
+  "version": "1.0.0",
+  "description": "simple socket.io wrapper for node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AlexJS",
+  "license": "MIT",
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/js-code-ua/socket.io-wrapper.git"
+  },
+  "keywords": [
+    "node",
+    "socket.io",
+    "event"
+  ],
+  "bugs": {
+    "url": "https://github.com/js-code-ua/socket.io-wrapper/issues"
+  },
+  "homepage": "https://github.com/js-code-ua/socket.io-wrapper#readme"
+}
