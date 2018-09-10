@@ -45,6 +45,7 @@ index.html simple client for testing
     });
 
     client.on('hello', m => console.log(m));
+    client.emit('frontend:message', {message: 'Hello world!'})
 </script>
 ```
 
