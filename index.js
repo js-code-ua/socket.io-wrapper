@@ -45,8 +45,8 @@ class ioWrapper {
 
         });
 
-        this.emitTo = this.ioEmit.bind(this);
-        this.inject = this.ioInject.bind(this);
+        this.emitTo = this.emitTo.bind(this);
+        this.inject = this.inject.bind(this);
         this.emitBroadcast = this.emitBroadcast.bind(this);
     }
 
@@ -66,8 +66,8 @@ class ioWrapper {
         }
     }
 
-    get emitBroadcast() {
-        return this.io.emit;
+    emitBroadcast(event) {
+        this.io.emit(...event);
     }
 
     /*
