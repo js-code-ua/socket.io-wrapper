@@ -1,5 +1,5 @@
 {
-  "name": "socket-io-wrapper",
+  "name": "node-socket-io-wrapper",
   "version": "1.0.0",
   "description": "simple socket.io wrapper for node.js",
   "main": "index.js",
