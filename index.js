@@ -3,7 +3,7 @@ const io = require('socket.io');
 class ioWrapper {
 
     constructor(app, { middlewares, updateSession, clearSession } = {}) {
-       
+
         this.io = io(app);
         this.connected = {};
 
@@ -21,7 +21,7 @@ class ioWrapper {
         this.io.on('connect', client => {
 
             //put callback to constructor to update your session
-            
+
             if (updateSession) {
                 updateSession(client.id);
             }
@@ -53,8 +53,8 @@ class ioWrapper {
         socketId id of connection
         event - array ['event_name', ()=>{ handler callback }]
     */
-    
-    emit(socketId, event) {
+
+    emitTo(socketId, event) {
         try {
             if (this.connected[socketId]) {
                 this.connected[socketId].emit(...event);
@@ -64,7 +64,11 @@ class ioWrapper {
             console.log(e);
         }
     }
-   
+
+    get emitBroadcast() {
+        return this.io.emit;
+    }
+
     /*
         socketId id of connection
         handler - array ['event_name', ()=>{ handler callback }]
