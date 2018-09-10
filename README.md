@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
 http.listen(3000);
 
 const event = ['hello', {message:'hello'}];
-const handler = ['frontend:message', console.log]
+const handler = ['frontend:message', console.log];
 
 setInterval(()=> {
     io.emitBroadcast(event);
@@ -41,11 +41,11 @@ index.html simple client for testing
     const client = io('http://localhost:3000');
 
     client.on('connect', () => {
-        console.log('Connected')
+        console.log('Connected');
     });
 
     client.on('hello', m => console.log(m));
-    client.emit('frontend:message', {message: 'Hello world!'})
+    client.emit('frontend:message', {message: 'Hello world!'});
 </script>
 ```
 
