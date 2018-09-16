@@ -85,6 +85,19 @@ class ioWrapper {
             console.log(e);
         }
     }
+
+    injectMany(socketId, handlers) {
+        try {
+            if (this.connected[socketId]) {
+                for (const handler of handlers) {
+                    this.connected[socketId].on(...handler);
+                }
+            }
+        }
+        catch (e) {
+            console.log(e);
+        }
+    }
 }
 
 module.exports = (app, middleware, updateSession) => new ioWrapper(app, middleware, updateSession);
